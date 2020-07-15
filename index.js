@@ -4,34 +4,26 @@ let pets = [
   { name: "Jasper", type: "dog", bornOn: 2016 }
 ];
 
-let getAge=(pet)=> {
+const getAge=(pet)=> {
   return new Date().getFullYear() - pet.bornOn;
 }
 
 let petsWithAge = [];
-pets.forEach(pet=>
+pets.map(pet=>
  {
- 
-  pet.age = getAge(pet);
-
-  petsWithAge.push(pet);
-})
+   pet.age = getAge(pet);})
+ pets.forEach(pet=>
+  {petsWithAge.push(pet);
+  })
 console.log(petsWithAge);
 
-let dogs = [];0
-pets.forEach(pet =>{
-
-  if (pet.type === "dog") {
-    dogs.push(pet);
-  }
-})
+let dogs = [];
+pets.filter(pet =>
+(pet.type === "dog") 
+  
+)
 console.log(dogs);
 
-let jasper;
-pets.forEach(pet=> {
 
-  if (pet.name === "Jasper") {
-    jasper = pet;
-  }
-})
-console.log("Jasper is " + jasper.age + " years old");
+let jasper = pets.find(pet => pet.name === `Jasper`)
+console.log(`Jasper is ${jasper.age} years old`);
