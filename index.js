@@ -12,7 +12,7 @@ const getAge = (pet) => {
 let petsWithAge = []; {
   pets.map(pet =>
       pet.age = getAge(pet))
-  pets.forEach(el => petsWithAge.pusg(el))
+  pets.forEach(el => petsWithAge.push(el))
   console.log(petsWithAge)
 
 }
